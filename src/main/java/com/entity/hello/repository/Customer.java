@@ -37,4 +37,8 @@ public class Customer implements Serializable {
     public Long getId() {
         return id;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
 }
