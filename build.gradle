@@ -35,5 +35,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("mysql:mysql-connector-java:5.1.36")
     compile("org.flywaydb:flyway-core:4.0.1")
+    compile("org.springframework.boot:spring-boot-starter-data-redis")
 }
 

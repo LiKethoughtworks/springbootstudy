@@ -1,5 +1,6 @@
 package com.entity.hello.runAfterStartUp;
 
+import com.entity.hello.redis.CustomerRedisPool;
 import com.entity.hello.repository.Customer;
 import com.entity.hello.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ public class CommandLineExample implements CommandLineRunner{
     @Autowired
     CustomerRepository repository;
 
+    @Autowired
+    CustomerRedisPool customerRedisPool;
+
     @Override
     public void run(String... args) throws Exception {
         repository.save(new Customer("Jack1", "Bauer1"));
@@ -18,5 +22,8 @@ public class CommandLineExample implements CommandLineRunner{
         repository.save(new Customer("Kim1", "Bauer1"));
         repository.save(new Customer("David1", "Palmer1"));
         repository.save(new Customer("Michelle1", "Dessler1"));
+
+        customerRedisPool.insertCustomerData();
+        customerRedisPool.getCustomer();
     }
 }
