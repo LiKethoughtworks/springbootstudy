@@ -1,6 +1,5 @@
 package com.entity.hello;
 
-import org.springframework.context.annotation.ComponentScan;
 import com.entity.hello.repository.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,13 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.entity.hello.repository.CustomerRepository;
 
 @SpringBootApplication
-@EnableJpaRepositories("com.entity.hello.repository")
-@ComponentScan("com.entity.hello")
-@ComponentScan("com.entity.hello")
+//@EnableJpaRepositories("com.entity.hello.repository")
+//@ComponentScan("com.entity.hello")
+//@ComponentScan("com.entity.hello")
 public class Application {
 
     private static final Logger log = LoggerFactory.getLogger(Application.class);
