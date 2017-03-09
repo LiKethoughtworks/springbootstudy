@@ -17,6 +17,19 @@ jar {
     version =  '0.1.0'
 }
 
+project.ext {
+    environment = 'local'
+}
+loadConfiguration()
+
+def loadConfiguration() {
+    def environment = hasProperty('env') ? env : 'local'
+    project.ext.environment = environment
+}
+
+bootRun.systemProperty 'spring.profiles.active', project.ext.environment
+
+
 repositories {
     mavenCentral()
 }
