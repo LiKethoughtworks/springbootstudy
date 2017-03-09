@@ -10,9 +10,10 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'pmd'
+
 
 jar {
     baseName = 'gs-spring-boot'
@@ -23,6 +24,10 @@ project.ext {
     environment = 'local'
 }
 loadConfiguration()
+
+
+project.pmd.ruleSetFiles = files("config/pmd-check-rules.xml")
+
 
 def loadConfiguration() {
     def environment = hasProperty('env') ? env : 'local'
