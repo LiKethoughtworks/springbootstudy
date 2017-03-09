@@ -16,8 +16,8 @@ import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 @Configuration
 public class TaskSchedule {
 
-    private static final long TASK_INTERVAL_IN_SECONDS = 10;
-    private static final long MS_PER_SECOND = 10;
+    private static final long TASK_INTERVAL_IN_SECONDS = 10000000;
+    private static final long MS_PER_SECOND = 1000000;
 
     @Autowired
     ApplicationContext applicationContext;
