@@ -1,3 +1,5 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
 buildscript {
     repositories {
         mavenCentral()
@@ -28,6 +30,25 @@ def loadConfiguration() {
 }
 
 bootRun.systemProperty 'spring.profiles.active', project.ext.environment
+
+processResources {
+    println("active profile: ${project.ext.environment}")
+
+    include "application.properties"
+    include "application-${project.ext.environment}.properties"
+    include 'db/migration/**'
+
+    filesMatching("**/application.properties") {
+        filter(ReplaceTokens, tokens: [
+                'profile': "${project.ext.environment}".toString(),
+        ])
+    }
+}
+
+build.dependsOn 'processResources'
+
+
+
 
 
 repositories {
