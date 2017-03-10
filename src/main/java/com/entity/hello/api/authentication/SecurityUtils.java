@@ -11,13 +11,12 @@ import java.util.List;
 public class SecurityUtils {
 
     public SecurityContext buildContext(String userName) {
-        System.out.println("hello jiabaobao");
         SecurityContext securityContext = SecurityContextHolder.getContext();
         securityContext.setAuthentication(new CustomAuthentication(userName, getPrivilegesFrom("")));
         return securityContext;
     }
 
     private List<String> getPrivilegesFrom(String user) {
-        return Arrays.asList("admin");
+        return Arrays.asList("ROLE_ADMIN");
     }
 }

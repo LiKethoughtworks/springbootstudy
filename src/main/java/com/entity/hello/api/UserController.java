@@ -6,6 +6,7 @@ import com.entity.hello.repository.Customer;
 import com.entity.hello.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class UserController {
         return  userLoginService.login(loginRequest);
     }
 
+    @Secured(value = "ROLE_ADMIN")
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<Customer> listAll(){

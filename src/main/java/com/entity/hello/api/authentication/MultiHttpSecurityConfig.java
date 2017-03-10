@@ -55,7 +55,6 @@ public class MultiHttpSecurityConfig {
         @Bean
         public AuthenticationEntryPoint unauthorizedEntryPoint() {
             return (request, response, authException) -> {
-                String token = request.getHeader(HttpHeaders.AUTHORIZATION);
                 logger.error("access error with token {}....: {}", response.getHeader(HttpHeaders.AUTHORIZATION)
                         , authException.getMessage());
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);

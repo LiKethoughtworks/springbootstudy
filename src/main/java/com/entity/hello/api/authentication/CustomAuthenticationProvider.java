@@ -19,7 +19,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        System.out.println("hello yibaobao");
         PreAuthenticatedAuthenticationToken token = (PreAuthenticatedAuthenticationToken) authentication;
         String userName = (String) token.getPrincipal();
         return securityUtils.buildContext(userName).getAuthentication();
