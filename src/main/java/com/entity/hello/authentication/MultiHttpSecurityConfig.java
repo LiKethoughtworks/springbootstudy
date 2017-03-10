@@ -1,4 +1,4 @@
-package com.entity.hello.api.authentication;
+package com.entity.hello.authentication;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +45,7 @@ public class MultiHttpSecurityConfig {
                     .csrf().disable()
                     .authorizeRequests()
                     .antMatchers("/token").permitAll()
-                    .antMatchers("/token/**").permitAll()
+                    .antMatchers("/exceptions").permitAll()
                     .anyRequest().authenticated();
 
             http.exceptionHandling().authenticationEntryPoint(unauthorizedEntryPoint())

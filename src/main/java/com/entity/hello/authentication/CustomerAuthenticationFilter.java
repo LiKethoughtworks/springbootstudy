@@ -1,4 +1,4 @@
-package com.entity.hello.api.authentication;
+package com.entity.hello.authentication;
 
 import com.entity.hello.redis.RedisTokenPool;
 import org.springframework.beans.factory.annotation.Autowired;

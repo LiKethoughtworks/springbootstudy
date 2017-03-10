@@ -1,4 +1,4 @@
-package com.entity.hello.api.authentication;
+package com.entity.hello.authentication;
 
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
