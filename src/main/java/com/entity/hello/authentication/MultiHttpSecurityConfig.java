@@ -44,6 +44,8 @@ public class MultiHttpSecurityConfig {
             http
                     .csrf().disable()
                     .authorizeRequests()
+                    .antMatchers("/swagger-ui.html", "/webjars/springfox-swagger-ui/**",
+                            "/swagger-resources/**", "/swagger/**", "/v2/api-docs").permitAll()
                     .antMatchers("/token").permitAll()
                     .antMatchers("/exceptions").permitAll()
                     .anyRequest().authenticated();
