@@ -12,11 +12,11 @@ public class SecurityUtils {
 
     public SecurityContext buildContext(String userName) {
         SecurityContext securityContext = SecurityContextHolder.getContext();
-        securityContext.setAuthentication(new CustomAuthentication(userName, getPrivilegesFrom("")));
+        securityContext.setAuthentication(new CustomAuthentication(userName, getPrivilegesFrom()));
         return securityContext;
     }
 
-    private List<String> getPrivilegesFrom(String user) {
+    private List<String> getPrivilegesFrom() {
         return Arrays.asList("ROLE_ADMIN");
     }
 }
