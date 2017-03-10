@@ -43,6 +43,7 @@ processResources {
     include "application-${project.ext.environment}.properties"
     include 'db/migration/**'
     include 'quartz.properties'
+    include "logback-spring.xml"
 
     filesMatching("**/application.properties") {
         filter(ReplaceTokens, tokens: [
